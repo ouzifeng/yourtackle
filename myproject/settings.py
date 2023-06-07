@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-from decouple import config
+import dotenv
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-$uz_*pv3=aqpqh^hvgbf(yjtil$h$)27jp@%84xchrqm3q&6j$"
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -71,11 +72,11 @@ AUTHENTICATION_BACKENDS = [
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'email-smtp.eu-west-2.amazonaws.com'
-EMAIL_PORT = 587
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'AKIARBHNI2QM7Q7Y4AM5'
-EMAIL_HOST_PASSWORD = 'BAjKDAspLvhjyr0VJijLalSm8wAXju/afhV0ghPZ/rte'
-FROM_EMAIL = 'orders@tackletarts.uk'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+FROM_EMAIL = os.environ.get('FROM_EMAIL')
 
 
 MEDIA_URL = "/media/"
