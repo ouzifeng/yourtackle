@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'header.html' %}
+    <title>View Offers</title>
+</head>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        {% include 'navbar.html' %}
+
+        <!-- Pricing section-->
+        <section class="bg-light py-5">
+            {% load crispy_forms_tags %}
+            <div class="container px-5 my-5">
+                <h3 class="custom-input d-sm-none">
+                    {{ product.name }}</h3>
+                <div class="card border-0 shadow rounded-3 overflow-hidden">
+
+                    <div class="card-body p-0">
+                        <div class="row gx-0">
+                            <div class="col-lg-6 col-xl-5 py-lg-5">
+                                <div class="text-center">
+                                    <div id="carouselExampleIndicators" class="carousel carousel-dark slide"
+                                        data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            {% for product_image in product_images %}
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="{{ forloop.counter0 }}"
+                                                class="{% if forloop.first %}active{% endif %}" aria-current="true"
+                                                aria-label="Slide {{ forloop.counter }}"></button>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="carousel-inner">
+                                            {% for product_image in product_images %}
+                                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                                <img src="{{ product_image.image.url }}" class="d-block w-100"
+                                                    alt="{{ product.name }} image">
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+
+
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-7 account-details" id="myaccount-form">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="accordion d-lg-none" id="accordionAccountDetails">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingAccountDetails">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseAccountDetails" aria-expanded="false"
+                                                        aria-controls="collapseAccountDetails">
+                                                        Product Info
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseAccountDetails" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingAccountDetails"
+                                                    data-bs-parent="#accordionAccountDetails">
+                                                    <div class="accordion-body">
+                                                        <!-- Add Offers Details Here -->
+                                                        <div class="col-sm-12">
+                                                            <label class="form-label">Offers:</label>
+                                                            {% for offer in offers %}
+                                                            <div class="card mb-3">
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-3">
+                                                                            <label
+                                                                                style="font-size: 12px"><i>Buyer:</i></label>
+                                                                            <p>{{ offer.buyer.tackleshop }}</p>
+                                                                        </div>
+                                                                        <div class="col-sm-2">
+                                                                            <label style="font-size: 12px"><i>Cash
+                                                                                    Price:</i></label>
+                                                                            <p>£{{ offer.cash_price }}</p>
+                                                                        </div>
+                                                                        <div class="col-sm-2">
+                                                                            <label style="font-size: 12px"><i>Trade In
+                                                                                    Price:</i></label>
+                                                                            <p>£{{ offer.trade_in_price }}</p>
+                                                                        </div>
+                                                                        <div class="col-sm-2">
+                                                                            <label style="font-size: 12px"><i>Insurance
+                                                                                    Inc:</i></label>
+                                                                            <p>{% if offer.insurance_included %}
+                                                                                Yes {% else %} No {% endif %}</p>
+                                                                        </div>
+                                                                        <div class="col-sm-3">
+                                                                            <form
+                                                                                action="{% url 'accept_offer' offer_id=offer.id %}"
+                                                                                method="post">
+                                                                                {% csrf_token %}
+                                                                                {% if offer.status == 'ACCEPTED' %}
+                                                                                <button type="button"
+                                                                                    class="btn btn-success disabled"
+                                                                                    disabled>Offer Accepted</button>
+                                                                                {% else %}
+                                                                                <button type="submit"
+                                                                                    class="btn btn-success"
+                                                                                    onclick="console.log('Form submitted')">Accept
+                                                                                    Offer</button>
+                                                                                {% endif %}
+                                                                            </form>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {% empty %}
+                                                            <p>No offers yet.</p>
+                                                            {% endfor %}
+                                                        </div>
+                                                        <!-- End Offers Details -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="d-none d-lg-block">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Offers:</label>
+                                                    {% for offer in offers %}
+                                                    <div class="card mb-3">
+                                                        <div class="card-body">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-3">
+                                                                    <label style="font-size: 12px"><i>Buyer:</i></label>
+                                                                    <p>{{ offer.buyer.tackleshop }}</p>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <label style="font-size: 12px"><i>Cash
+                                                                            Price:</i></label>
+                                                                    <p>£{{ offer.cash_price }}</p>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <label style="font-size: 12px"><i>Trade In
+                                                                            Price:</i></label>
+                                                                    <p>£{{ offer.trade_in_price }}</p>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <label style="font-size: 12px"><i>Insurance
+                                                                            Inc:</i></label>
+                                                                    <p>{% if offer.insurance_included %}
+                                                                        Yes {% else %} No {% endif %}</p>
+                                                                </div>
+                                                                <div class="col-sm-3">
+                                                                    <form
+                                                                        action="{% url 'accept_offer' offer_id=offer.id %}"
+                                                                        method="post">
+                                                                        {% csrf_token %}
+                                                                        {% if offer.status == 'ACCEPTED' %}
+                                                                        <button type="button"
+                                                                            class="btn btn-success disabled"
+                                                                            disabled>Offer Accepted</button>
+                                                                        {% elif offer.status == 'REJECTED' %}
+                                                                        <button type="button"
+                                                                            class="btn btn-danger disabled"
+                                                                            disabled>Offer Rejected</button>
+                                                                        {% else %}
+                                                                        <button type="submit" class="btn btn-success"
+                                                                            style="float: bottom;position: absolute;bottom: 30px;"
+                                                                            onclick="console.log('Form submitted')">Accept
+                                                                            Offer</button>
+                                                                        {% endif %}
+                                                                    </form>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% empty %}
+                                                    <p>No offers yet.</p>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 offer-card">
+                    <div class="d-none d-lg-block">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="mb-3">
+                                    {% for offer in offers %}
+                                    <!-- Your card content here... -->
+                                    <div class="col-sm-12">
+                                        {% if offer.status == 'ACCEPTED' %}
+                                        <div class="alert alert-success" role="alert">
+                                            Congratulations! Offer accepted. Please check your email for
+                                            instructions.
+                                        </div>
+                                        {% else %}
+                                        <div class="alert alert-warning" role="alert">
+                                            No offer has yet been accepted.
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <!-- More card content... -->
+
+                                    {% empty %}
+                                    <p>No offers yet.</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Product Image Modal -->
+        <div class="modal fade" id="productImageModal" tabindex="-1" aria-labelledby="productImageModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="{{ product.photos.url }}" alt="{{ product.name }} image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <!-- Footer-->
+    {% include 'footer.html' %}
+</body>
+
+</html>

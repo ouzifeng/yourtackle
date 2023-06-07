@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'header.html' %}
+    <title>Tackle Shop - My Account</title>
+</head>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        {% include 'navbar.html' %}
+        <!-- Page Content-->
+        <section class="py-5">
+            <div class="container px-lg-5">
+                <div class="card border-0 shadow rounded-3 overflow-hidden">
+                    <div class="card-body p-0">
+                        <div class="row gx-0">
+                            <div class="col-lg-6 col-xl-5 py-lg-5 account-details">
+                                <div class="p-4">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <img src="{{ tackle_shop.shop_logo.url }}" alt="{{ product.name }} image"
+                                                class="img-fluid tackle-shop-logo" id="product-card-img">
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="h2 fw-bolder">Hi {{ tackle_shop.shop_name }}</div>
+                                        </div>
+                                    </div>
+
+                                    <p>Update your account information here</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-7" id="myaccount-form">
+                                <form method="post" action="{% url 'myaccount' %}">
+                                    {% csrf_token %}
+                                    <div class="accordion d-lg-none" id="accordionAccountDetails">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAccountDetails">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseAccountDetails"
+                                                    aria-expanded="false" aria-controls="collapseAccountDetails">
+                                                    Account Details
+                                                </button>
+                                            </h2>
+                                            <div id="collapseAccountDetails" class="accordion-collapse collapse"
+                                                aria-labelledby="headingAccountDetails"
+                                                data-bs-parent="#accordionAccountDetails">
+                                                <div class="accordion-body">
+                                                    <!-- Account details form fields -->
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <div class="mb-3">
+                                                                <label for="id_fname" class="form-label">First
+                                                                    Name</label>
+                                                                <input type="text" class="form-control" id="id_fname"
+                                                                    name="fname" value="{{ request.user.first_name }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="mb-3">
+                                                                <label for="id_lname" class="form-label">Last
+                                                                    Name</label>
+                                                                <input type="text" class="form-control" id="id_lname"
+                                                                    name="lname" value="{{ request.user.last_name }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="mb-3">
+                                                                <label for="id_email" class="form-label">Email
+                                                                    address</label>
+                                                                <input type="email" class="form-control" id="id_email"
+                                                                    name="email" value="{{ request.user.email }}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label for="id_password"
+                                                                    class="form-label">Password</label>
+                                                                <input type="password" class="form-control"
+                                                                    id="id_password" name="password">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="mb-3">
+                                                                <label for="id_password_confirm"
+                                                                    class="form-label">Confirm
+                                                                    Password</label>
+                                                                <input type="password" class="form-control"
+                                                                    id="id_password_confirm" name="password_confirm">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Add more form fields here -->
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="d-none d-lg-block">
+                                    <!-- Account details form fields -->
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="mb-3">
+                                                <label for="id_fname" class="form-label">First Name</label>
+                                                <input type="text" class="form-control" id="id_fname" name="fname"
+                                                    value="{{ request.user.first_name }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="mb-3">
+                                                <label for="id_lname" class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" id="id_lname" name="lname"
+                                                    value="{{ request.user.last_name }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="mb-3">
+                                                <label for="id_email" class="form-label">Email address</label>
+                                                <input type="email" class="form-control" id="id_email" name="email"
+                                                    value="{{ request.user.email }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="mb-3">
+                                                <label for="id_password" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="id_password"
+                                                    name="password">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="mb-3">
+                                                <label for="id_password_confirm" class="form-label">Confirm
+                                                    Password</label>
+                                                <input type="password" class="form-control" id="id_password_confirm"
+                                                    name="password_confirm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add more form fields here -->
+                                    <button type="submit" class="btn btn-primary d-lg-block">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+        <section>
+            <div class="container px-5">
+                {% include 'tackleshopaccount-buttons.html' %}
+            </div>
+        </section>
+
+
+
+        <section class="py-5">
+            <div class="container px-5">
+                <h2 class="fw-bolder fs-5 mb-4">Offers Accepted</h2>
+                <div class="row gx-5">
+                    {% for product in products %}
+                    <div class="col-lg-4 mb-5">
+                        <div class="card h-100 shadow border-0">
+                            <div id="product-card-img-container">
+                                {% for product_image in product.images.all %}
+                                <img src="{{ product_image.image.url }}" alt="{{ product.name }} image"
+                                    class="img-fluid" id="product-card-img">
+                                {% endfor %}
+                            </div>
+                            <div class="card-body p-4 card-border">
+                                <div class="h5 card-title mb-3 text-center">{{ product.name }}</div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="productBrand" style="font-size: 12px"><i>Brand:</i></label>
+                                        <p class="card-text mb-0" id="productBrand">{{ product.brand }}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="productCategory" style="font-size: 12px"><i>Category:</i></label>
+                                        <p class="card-text mb-0" id="productCategory">{{ product.category }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="productDate" style="font-size: 12px"><i>Date Listed:</i></label>
+                                        <div class="card-text mb-0">{{ product.created_at|date:"F j, Y" }}</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="productCondition" style="font-size: 12px"><i>Condition:</i></label>
+                                        <p class="card-text mb-0" id="productCondition">{{ product.condition }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 bg-transparent border-top-0 card-border">
+                                <div class="d-flex align-items-center">
+                                    {% for offer in offers %}
+                                    <!-- Your card layout -->
+                                    <a href="{% url 'make_offer' product_id=offer.product.id %}"
+                                        class="btn btn-success">
+                                        Offer Accepted for £{{ offer.cash_price }}
+                                    </a>
+                                    <!-- rest of your card layout -->
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No products are for sale yet.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="py-5 bg-light">
+            <div class="container px-5">
+                <div class="row gx-5">
+                    <div class="col-xl-8">
+                        <h2 class="fw-bolder fs-5 mb-4">News</h2>
+
+                        <!-- News item-->
+                        <div class="mb-4">
+                            <div class="small text-muted">May 12, 2023</div>
+                            <a class="link-dark" href="#!">
+                                <h3>Start Bootstrap releases Bootstrap 5 updates for templates and themes</h3>
+                            </a>
+                        </div>
+                        <!-- News item-->
+                        <div class="mb-5">
+                            <div class="small text-muted">May 5, 2023</div>
+                            <a class="link-dark" href="#!">
+                                <h3>Bootstrap 5 has officially landed</h3>
+                            </a>
+                        </div>
+                        <!-- News item-->
+                        <div class="mb-5">
+                            <div class="small text-muted">Apr 21, 2023</div>
+                            <a class="link-dark" href="#!">
+                                <h3>This is another news article headline, but this one is a little bit longer</h3>
+                            </a>
+                        </div>
+                        <div class="text-end mb-5 mb-xl-0">
+                            <a class="text-decoration-none" href="#!">
+                                More news
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="card border-0 h-100">
+                            <div class="card-body p-4">
+                                <div class="d-flex h-100 align-items-center justify-content-center">
+                                    <div class="text-center">
+                                        <div class="h6 fw-bolder">Contact</div>
+                                        <p class="text-muted mb-4">
+                                            For press inquiries, email us at
+                                            <br />
+                                            <a href="#!">press@domain.com</a>
+                                        </p>
+                                        <div class="h6 fw-bolder">Follow us</div>
+                                        <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
+                                        <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
+                                        <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
+                                        <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog preview section-->
+
+    </main>
+    <!-- Footer-->
+    {% include 'footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-lg-3 mb-3">
+        <div class="card">
+            <button type="button"
+                class="btn btn-primary {% if request.resolver_match.url_name == 'tackleshopaccount' %}btn-active{% endif %}"
+                onclick="navigateTo('{% url 'tackleshopaccount' %}')">My Account</button>
+        </div>
+    </div>
+    <div class="col-lg-3 mb-3">
+        <div class="card">
+            <button type="button"
+                class="btn btn-primary {% if request.resolver_match.url_name == 'products_for_sale' %}btn-active{% endif %}"
+                onclick="navigateTo('{% url 'products_for_sale' %}')">Products For Sale</button>
+        </div>
+    </div>
+    <div class="col-lg-3 mb-3">
+        <div class="card">
+            <button type="button"
+                class="btn btn-primary {% if request.resolver_match.url_name == 'offers_accepted' %}btn-active{% endif %}"
+                onclick="navigateTo('{% url 'offers_accepted' %}')">Offers Accepted</button>
+        </div>
+    </div>
+    <div class="col-lg-3 mb-3">
+        <div class="card">
+            <button type="button"
+                class="btn btn-primary {% if request.resolver_match.url_name == 'offers_made' %}btn-active{% endif %}"
+                onclick="navigateTo('{% url 'offers_made' %}')">Offers Made</button>
+        </div>
+    </div>
+</div>

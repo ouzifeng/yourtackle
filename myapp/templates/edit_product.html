@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'header.html' %}
+    <title>Edit Your Tackle</title>
+</head>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        {% include 'navbar.html' %}
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Contact form -->
+                <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                    <div class="text-center mb-5">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                            <i class="bi bi-hand-thumbs-up"></i>
+                        </div>
+                        <h1 class="fw-bolder text-center">Update your tackle information</h1>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <!-- New Tab -->
+                            <div class="tab">
+                                <p class="text-center">The more accurate and more descriptive you are, the more likely
+                                    you will receive a better offer
+                                </p>
+                                <!-- Start Contact Form -->
+                                {% load crispy_forms_tags %}
+
+                                <form method="POST" id="contactForm" action="{% url 'edit_product' product.id %}"
+                                    enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <!-- Your existing form fields here, same as in product.html -->
+                                    <button type="submit"
+                                        class="btn btn-primary float-end product-button">Update</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Your existing contact cards here, same as in product.html -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

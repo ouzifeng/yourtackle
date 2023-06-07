@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'header.html' %}
+    <title>Make an Offer</title>
+</head>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        {% include 'navbar.html' %}
+
+        <!-- Pricing section-->
+        <section class="bg-light py-5">
+            {% load crispy_forms_tags %}
+            <div class="container px-5 my-5">
+                <h3 class="custom-input d-sm-none">
+                    {{product.name }}</h3>
+                <div class="card border-0 shadow rounded-3 overflow-hidden">
+
+                    <div class="card-body p-0">
+                        <div class="row gx-0">
+                            <div class="col-lg-6 col-xl-5 py-lg-5">
+                                <div class="your-carousel text-center">
+                                    {% for product_image in product.images.all %}
+                                    <div>
+                                        <a href="{{ product_image.image.url }}" data-fancybox="gallery">
+                                            <img src="{{ product_image.image.url }}" alt="{{ product.name }} image"
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-xl-7 account-details" id="myaccount-form">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="accordion d-lg-none" id="accordionAccountDetails">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingAccountDetails">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseAccountDetails" aria-expanded="false"
+                                                        aria-controls="collapseAccountDetails">
+                                                        Product Info
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseAccountDetails" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingAccountDetails"
+                                                    data-bs-parent="#accordionAccountDetails">
+                                                    <div class="accordion-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <label class="form-label">Product Name</label>
+                                                                <p class="custom-input">
+                                                                    {{ product.name }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Variation Info</label>
+                                                                    <p class="custom-input">
+                                                                        {{ product.variation1|default:"None provided" }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Variation Info</label>
+                                                                    <p class="custom-input">
+                                                                        {{ product.variation2|default:"None provided" }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Condition</label>
+                                                                    <p class="custom-input">
+                                                                        {{ product.condition }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Description</label>
+                                                                    <p class="custom-input">
+                                                                        {{ product.description|default:"None provided"
+                                                                        }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Brand</label>
+                                                                    <p class="custom-input">
+                                                                        {{ product.brand }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Category</label>
+                                                                    <p class="custom-input">
+                                                                        {{ product.category }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Date Listed</label>
+                                                                    <p class="custom-input">
+                                                                        {{ product.created_at }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="d-none d-lg-block">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Product Name</label>
+                                                        <p class="custom-input">
+                                                            {{ product.name }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Variation Info</label>
+                                                        <p class="custom-input">
+                                                            {{ product.variation1|default:"None provided" }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Variation Info</label>
+                                                        <p class="custom-input">
+                                                            {{ product.variation2|default:"None provided" }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Condition</label>
+                                                        <p class="custom-input">
+                                                            {{ product.condition }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Description</label>
+                                                        <p class="custom-input">
+                                                            {{ product.description|default:"None provided" }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Brand</label>
+                                                        <p class="custom-input">
+                                                            {{ product.brand }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Category</label>
+                                                        <p class="custom-input">
+                                                            {{ product.category }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Date Listed</label>
+                                                        <p class="custom-input">
+                                                            {{ product.created_at }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card border-0 shadow rounded-3 overflow-hidden offer-card">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4 mt-4">Make an Offer:</h4>
+                        {% if existing_offer %}
+                        {% if existing_offer.status == "ACCEPTED" %}
+                        <p>Congratulations! Your offer have been accepted</p>
+                        <p>Cash Price: £{{ cash_price }}</p>
+                        <p>Trade-in Price: £{{ trade_in_price }}</p>
+                        <p>An email has been sent to you, but please contact the seller to arrange pick up and find out
+                            whether
+                            they want the cash price or the trade-in price
+                        </p>
+                        <a href="#" class="btn btn-primary">Contact Seller</a>
+                        {% else %}
+                        <p class="custom-input existing-offer">Cash offer already made for £{{ existing_offer.cash_price
+                            }}
+                        </p>
+                        <p class="custom-input existing-offer">Trade in offer already made for £{{ trade_in_price }}</p>
+                        {% endif %}
+                        {% else %}
+
+                        <form method="POST" style="max-width: 400px;">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <button type="submit" class="btn btn-danger">Submit Offer</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Product Image Modal -->
+        {% for product_image in product.images.all %}
+        <div class="modal fade" id="productImageModal{{ forloop.counter }}" tabindex="-1"
+            aria-labelledby="productImageModalLabel{{ forloop.counter }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="{{ product_image.image.url }}" alt="{{ product.name }} image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </main>
+    <!-- Footer-->
+    {% include 'footer.html' %}
+</body>
+
+</html>
