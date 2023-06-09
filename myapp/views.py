@@ -554,3 +554,13 @@ def delete_product(request, product_id):
     messages.success(request, "Product deleted successfully.")
     return redirect(reverse('myaccount'))
 
+def index(request):
+    print("Inside landing_page view")
+    offers = Offer.objects.filter(status=Offer.OfferStatus.ACCEPTED)  # Update this to match your accepted status
+    products_with_offers = [{'product': offer.product, 'price': offer.trade_in_price or offer.cash_price} for offer in offers]
+    print(f'Found {len(products_with_offers)} products with accepted offers')
+    return render(request, 'index.html', {'products_with_offers': products_with_offers})
+
+
+
+

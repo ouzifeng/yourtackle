@@ -13019,3 +13019,24 @@ html {
 .error {
   text-align: center;
 }
+
+.bg-grey {
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+
+.table-responsive {
+ box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+ overflow: hidden;
+ border-radius: 5px;
+}
+
+.compare-head {
+  background-color: #3175f9;
+  color: white;
+}
+
+.light-blue {
+  background-color: #3175f929;
+}

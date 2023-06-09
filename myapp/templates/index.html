@@ -3,7 +3,9 @@
 
 <head>
     {% include 'header.html' %}
-    <title>Sell Your Used Fishing Tackle</title>
+    <title>Sell Your Tackle | Leading Online Platform for Used Fishing Gear</title>
+    <meta name="description"
+        content="Sell Your Tackle is the go-to online marketplace for buying and selling used fishing tackle. List your gear and have tackle shops bid on it.">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -11,17 +13,21 @@
         <!-- Navigation-->
         {% include 'navbar.html' %}
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header class="bg-dark py-3">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
+                    <div class="col-12 d-block d-sm-none text-center">
+                        <img class="img-fluid rounded-3" src="static/assets/sell-used-fishing-tackle.jpg" alt="..." />
+                    </div>
+
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
                             <h1 class="display-5 fw-bolder text-white mb-2">Sell Your Used Tackle</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Have some fishing tackle lying around you want
-                                to get rid of? Welcome to Your Tackle, the new and easy to way to sell your fishing
+                            <p class="lead fw-normal text-white-50 mb-4">Welcome to Your Tackle, the new and easy to way
+                                to sell your fishing
                                 tackle</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                <a class="btn btn-light btn-lg px-4 me-sm-3" href="/form"><b>Sell My Tackle</b><i
+                                <a class="btn btn-light btn-lg px-4 me-sm-3" href="/form"><b>Sell Your Tackle</b><i
                                         class="fa-solid fa-arrow-right fa-beat" style="margin-left:40px"></i></a>
                             </div>
                         </div>
@@ -35,43 +41,94 @@
         <section class="py-5" id="features">
             <div class="container px-5 my-5">
                 <div class="row gx-5">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h2 class="fw-bolder mb-0">The free and easy way to get an immediate valuation on your
-                            secondhand and used tackle</h2>
+                    <div class="col-sm-12 mb-5">
+                        <h2 class="fw-bolder mb-0 text-center">The free and easy way to sell your used tackle
+                        </h2>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="row gx-5 row-cols-1 row-cols-md-2">
-                            <div class="col mb-5 h-100">
+                </div>
+                <div class="row gx-5 mb-5">
+                    <div class="col-sm-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body bg-grey">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i
                                         class="bi bi-currency-pound"></i></div>
-                                <h2 class="h5">Immediate Valuation</h2>
-                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is
-                                    just a bit more text.</p>
+                                <h2 class="h5">Tackle Shops Bid For Your Tackle</h2>
+                                <p class="mb-0">Sit back, relax and let tackle shops compete to give you the best price
+                                    for your used
+                                    tackle online</p>
                             </div>
-                            <div class="col mb-5 h-100">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body bg-grey">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i
-                                        class="bi bi-building"></i></div>
-                                <h2 class="h5">Featured title</h2>
-                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is
-                                    just a bit more text.</p>
+                                        class="bi bi-truck"></i></div>
+                                <h2 class="h5">Pickup Included</h2>
+                                <p class="mb-0">All bids come with the cost of doorstep pickup included in the price.
+                                </p>
                             </div>
-                            <div class="col mb-5 mb-md-0 h-100">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body bg-grey">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i
-                                        class="bi bi-toggles2"></i></div>
-                                <h2 class="h5">Featured title</h2>
-                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is
-                                    just a bit more text.</p>
-                            </div>
-                            <div class="col h-100">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i
-                                        class="bi bi-toggles2"></i></div>
-                                <h2 class="h5">Featured title</h2>
-                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is
-                                    just a bit more text.</p>
+                                        class="bi bi-emoji-laughing"></i></div>
+                                <h2 class="h5">Free To Sell</h2>
+                                <p class="mb-0">Unlike eBay, there is no cost to list used tackle, start today!</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!--Table-->
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <div class="table-responsive text-center">
+                            <table class="table text-successtable-border border-light" style="margin-bottom: 0px">
+                                <thead class="border-light">
+                                    <tr class="compare-head">
+                                        <th scope="col"></th>
+                                        <th scope="col">Sell Your Tackle</th>
+                                        <th scope="col">eBay</th>
+                                        <th scope="col">Facebook Marketplace</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">No Fees</th>
+                                        <td><i class="fas fa-check text-success"></i></td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><i class="fas fa-check text-success"></i></td>
+                                    </tr>
+                                    <tr class="light-blue">
+                                        <th scope="row">Item Picked Up</th>
+                                        <td><i class="fas fa-check text-success"></i></td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Trusted Buyers</th>
+                                        <td><i class="fas fa-check text-success"></i></td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                    </tr>
+                                    <tr class="light-blue">
+                                        <th scope="row">Stress Free</th>
+                                        <td><i class="fas fa-check text-success"></i></td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                        <td><i class="fas fa-times text-danger"></i></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+
             </div>
         </section>
         <!-- Testimonial section-->
@@ -103,91 +160,61 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
                         <div class="text-center">
-                            <h2 class="fw-bolder">From our blog</h2>
-                            <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                            <h2 class="fw-bolder">Recently Sold</h2>
+                            <p class="lead fw-normal text-muted mb-5">Check out some the items of tackle our customers
+                                recently accepted offers on!</p>
                         </div>
                     </div>
                 </div>
                 <div class="row gx-5">
-                    <div class="col-lg-4 mb-5">
+                    {% for item in products_with_offers %}
+                    <div class="col-lg-3 mb-5">
                         <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
-                            <div class="card-body p-4">
-                                <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                                <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <h5 class="card-title mb-3">Blog post title</h5>
-                                </a>
-                                <p class="card-text mb-0">Some quick example text to build on the card title and make up
-                                    the bulk of the card's content.</p>
+                            <div id="product-card-img-container">
+                                {% for product_image in item.product.images.all %}
+                                <img src="{{ product_image.image.url }}" alt="{{ product.name }} image"
+                                    class="img-fluid" id="product-card-img">
+                                {% endfor %}
                             </div>
-                            <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                <div class="d-flex align-items-end justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <img class="rounded-circle me-3"
-                                            src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                        <div class="small">
-                                            <div class="fw-bold">Kelly Rowan</div>
-                                            <div class="text-muted">March 12, 2023 &middot; 6 min read</div>
-                                        </div>
+                            <div class="card-body p-4 card-border">
+                                <div class="h5 card-title mb-3 text-center">{{ item.product.name }}</div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="productBrand" style="font-size: 12px"><i>Brand:</i></label>
+                                        <p class="card-text mb-0" id="productBrand">{{ item.product.brand }}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="productCategory" style="font-size: 12px"><i>Category:</i></label>
+                                        <p class="card-text mb-0" id="productCategory">{{ item.product.category }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="productDate" style="font-size: 12px"><i>Date Listed:</i></label>
+                                        <div class="card-text mb-0">{{ item.product.created_at|date:"F j, Y" }}</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="productCondition" style="font-size: 12px"><i>Condition:</i></label>
+                                        <p class="card-text mb-0" id="productCondition">{{ item.product.condition }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 bg-transparent border-top-0 card-border">
+                                <div class="d-flex align-items-center">
+                                    <div class="text-muted text-center w-100">
+                                        <button class="btn btn-success">Offer Accepted for £{{ item.price }}</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-5">
-                        <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
-                            <div class="card-body p-4">
-                                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Media</div>
-                                <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <h5 class="card-title mb-3">Another blog post title</h5>
-                                </a>
-                                <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of
-                                    each card. Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.</p>
-                            </div>
-                            <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                <div class="d-flex align-items-end justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <img class="rounded-circle me-3"
-                                            src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                        <div class="small">
-                                            <div class="fw-bold">Josiah Barclay</div>
-                                            <div class="text-muted">March 23, 2023 &middot; 4 min read</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-5">
-                        <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />
-                            <div class="card-body p-4">
-                                <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                                <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <h5 class="card-title mb-3">The last blog post title is a little bit longer than the
-                                        others</h5>
-                                </a>
-                                <p class="card-text mb-0">Some more quick example text to build on the card title and
-                                    make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                <div class="d-flex align-items-end justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <img class="rounded-circle me-3"
-                                            src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                        <div class="small">
-                                            <div class="fw-bold">Evelyn Martinez</div>
-                                            <div class="text-muted">April 2, 2023 &middot; 10 min read</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% empty %}
+                    <p>No products available.</p>
+                    {% endfor %}
                 </div>
+
+
+
                 <!-- Call to action-->
                 <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
                     <div
