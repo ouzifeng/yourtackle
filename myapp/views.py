@@ -28,6 +28,7 @@ from django.core.exceptions import PermissionDenied
 from django.db import transaction
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
+from django.http import HttpResponse
 
 def index(request):
     return render(request, "index.html")
@@ -561,6 +562,12 @@ def index(request):
     print(f'Found {len(products_with_offers)} products with accepted offers')
     return render(request, 'index.html', {'products_with_offers': products_with_offers})
 
-
+def robots_txt(request):
+    lines = [
+        "User-Agent: *",
+        # Add any other url you want to hide from web crawlers
+        "Sitemap: https://www.sellyourtackle.co.uk/sitemap.xml"
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
 
 

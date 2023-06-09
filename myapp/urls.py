@@ -3,7 +3,9 @@ from . import views
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import accept_offer, ProductsForSale, delete_product
+from .views import accept_offer, ProductsForSale, delete_product, robots_txt
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import sitemaps 
 
 urlpatterns = [
     path("", views.index, name="index"),
@@ -37,6 +39,8 @@ urlpatterns = [
     path('myaccount/seller-offers-accepted/', views.seller_offers_accepted, name='seller_offers_accepted'),
     path('product/edit/<int:product_id>', views.edit_product, name='edit_product'),
     path('product/delete/<int:product_id>', delete_product, name='delete_product'),
+    path("robots.txt", robots_txt),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 if settings.DEBUG:  # new

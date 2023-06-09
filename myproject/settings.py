@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "dal",
     "dal_select2",
     "social_django",
+    'django.contrib.sitemaps',
 ]
 
 AUTHENTICATION_BACKENDS = (
