@@ -9,6 +9,7 @@ from .forms import (
     TackleShopForm,
     OfferForm,
     ProductImageForm,
+    ContactForm,
 )
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -29,6 +30,7 @@ from django.db import transaction
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.http import HttpResponse
+from django.core.mail import mail_admins, send_mail
 
 def index(request):
     return render(request, "index.html")
@@ -571,3 +573,52 @@ def robots_txt(request):
     return HttpResponse("\n".join(lines), content_type="text/plain")
 
 
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get('name')
+            email = form.cleaned_data.get('email')
+            phone = form.cleaned_data.get('phone')
+            message = form.cleaned_data.get('message')
+
+            subject = f'Message from {name}'
+            message = f'From: {name}\nE-mail: {email}\nPhone: {phone}\n\n{message}'
+
+            mail_admins(subject, message)
+
+            # Add success message or redirect here
+
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get('name')
+            email = form.cleaned_data.get('email')
+            phone = form.cleaned_data.get('phone')
+            message = form.cleaned_data.get('message')
+
+            subject = f'Message from {name}'
+            message = f'From: {name}\nE-mail: {email}\nPhone: {phone}\n\n{message}'
+
+            send_mail(
+                subject,
+                message,
+                email,
+                ['hello@sellyourtackle.co.uk'],  # This is the destination email
+            )
+
+            messages.success(request, 'Thanks for your message! We will get back to you as soon as possible.')
+            
+            # Redirect back to the same page after the form is successfully submitted
+            return redirect(request.path_info)
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})

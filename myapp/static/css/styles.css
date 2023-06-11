@@ -13044,3 +13044,7 @@ html {
 .yin-yang {
   height: 100px;
 }
+
+.alert {
+  text-align: center;
+}
