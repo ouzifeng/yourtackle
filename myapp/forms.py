@@ -23,10 +23,12 @@ class YourForm(forms.Form):
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField()
     phone_number = forms.CharField(max_length=20)
-
+    role = forms.CharField(initial='seller', widget=forms.HiddenInput())
+    
     class Meta:
         model = User
         fields = (
+            "role",
             "first_name",
             "last_name",
             "email",
@@ -36,7 +38,7 @@ class CustomUserCreationForm(UserCreationForm):
         )
 
     def save(self, commit=True):
-        user = super(UserCreationForm, self).save(commit=False)
+        user = super().save(commit=False)
         user.username = self.cleaned_data["email"]
         user.email = self.cleaned_data["email"]
         user.set_password(self.cleaned_data["password1"])
@@ -49,6 +51,7 @@ class CustomUserCreationForm(UserCreationForm):
             )  # create profile instance
             profile.save()
         return user
+
 
 
 
