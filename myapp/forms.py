@@ -36,13 +36,14 @@ class CustomUserCreationForm(UserCreationForm):
         )
 
     def save(self, commit=True):
-        user = super(UserRegisterForm, self).save(commit=False)
+        user = super(CustomUserCreationForm, self).save(commit=False)
         phone_number = self.cleaned_data["phone_number"]
         if commit:
             user.save()
             profile = Profile(user=user, phone_number=phone_number)
             profile.save()
         return user
+
 
 
 class ProductForm(forms.ModelForm):
