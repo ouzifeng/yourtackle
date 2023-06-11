@@ -1,0 +1,143 @@
+[33mcommit c2fde7b230b9371d976433adcd09b64eeef53dc2[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Sun Jun 11 18:09:23 2023 +0100
+
+    user fix 1
+
+[33mcommit 619bfe58cb19b481abf3adce4f01aa1a25a05b9a[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Sun Jun 11 18:06:40 2023 +0100
+
+    user fix 1
+
+[33mcommit 8a33bfe5e45ac7689b2f80fa545260446715212e[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Sun Jun 11 18:02:18 2023 +0100
+
+    user fix 1
+
+[33mcommit b2ed1b4bb02e7ec4e587f5bf0a937ac82e7501fa[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Sun Jun 11 17:56:29 2023 +0100
+
+    user fix
+
+[33mcommit 757135b68931c4fbff037793bdc5232650c3f46b[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Sun Jun 11 17:49:25 2023 +0100
+
+    super fix
+
+[33mcommit ba6cdcc53bcbf7b239971f314e4b45cbcd879143[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Sun Jun 11 17:38:35 2023 +0100
+
+    fix for csfr login issues
+
+[33mcommit 5fdca92a685927fba9994cffa0067a79dfdb9164[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Sun Jun 11 12:28:24 2023 +0100
+
+    integrate mailtrap
+
+[33mcommit 1036af29edbc6170340a21e8d8fc577df166f4df[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Fri Jun 9 17:58:59 2023 +0100
+
+    home page improvements
+
+[33mcommit 02b8cf80b8c74c26e352915758f9ec725d09ef87[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Fri Jun 9 15:09:27 2023 +0100
+
+    robots.txt and sitemap.xml geenrated
+
+[33mcommit 2831f92f87f37b62b4d79c4cf19f985a643d6db0[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Fri Jun 9 13:32:16 2023 +0100
+
+    tidy up index page, add meta info and add GA
+
+[33mcommit 92d0e22c03385f6d1dca9b90273e9ff49125c085[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 15:15:20 2023 +0100
+
+    ignore media
+
+[33mcommit 9235d8790361da13791ee1476802418249f3aca5[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 15:10:07 2023 +0100
+
+    ignore media
+
+[33mcommit e6b28f6d74c46fa4eb0130ea4d9aa671724a8b0d[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 15:07:04 2023 +0100
+
+    static files fix
+
+[33mcommit 4f9579116bb7e36e72ba29bd812a5b1cfe3f1f97[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 14:57:35 2023 +0100
+
+    sql db
+
+[33mcommit 53947a49202e3a4c3a844ceec8758aa2b26ee901[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 14:45:04 2023 +0100
+
+    new
+
+[33mcommit 31e14b4577c4eb47c5ca85557a4502db29d45025[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 14:41:30 2023 +0100
+
+    new
+
+[33mcommit 58995ef64db44674f90ebda6544e4903cf2e7ca4[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 14:39:25 2023 +0100
+
+    new
+
+[33mcommit 1e8fc496a5abc9037419180e348a020584f0f796[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 14:38:58 2023 +0100
+
+    new
+
+[33mcommit 279925bbee1648ae916a75afc6628f635494ffe8[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 14:34:09 2023 +0100
+
+    new proc file
+
+[33mcommit 66512f6b22fba7dc3776ac577cb888fbe858dbb6[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 14:29:32 2023 +0100
+
+    added procfile
+
+[33mcommit cc7297ba856f1387dcca3797169a6f755958407c[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 14:15:48 2023 +0100
+
+    fixed requirements.txt
+
+[33mcommit 44638feef25668b288397d4c2a69c7a15eeeedb8[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 13:42:33 2023 +0100
+
+    added variables to setting.py
+
+[33mcommit ed83924c369fa9d713bf5752119166057765c3d4[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 13:33:12 2023 +0100
+
+    added requirements.txt
+
+[33mcommit cfa210da5939f0523a056b0efa08710212edb598[m
+Author: David Oak <mr.davidoak@gmail.com>
+Date:   Wed Jun 7 13:14:22 2023 +0100
+
+    initial commit
