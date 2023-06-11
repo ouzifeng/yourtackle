@@ -101,6 +101,15 @@ STORAGES = {
     }
 }
 
+# Set this to True if your site is served over HTTPS
+CSRF_COOKIE_SECURE = True
+
+# Set this to your base domain (with a leading dot) if your site spans multiple subdomains
+CSRF_COOKIE_DOMAIN = 'sellyourtackle.co.uk' 
+
+# List of hosts which are trusted origins for unsafe requests (like 'POST')
+CSRF_TRUSTED_ORIGINS = ['https://sellyourtackle.co.uk', 'https://www.sellyourtackle.co.uk']
+
 
 ROOT_URLCONF = "myproject.urls"
 
