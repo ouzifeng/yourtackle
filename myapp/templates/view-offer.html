@@ -68,7 +68,7 @@
                                                         data-bs-toggle="collapse"
                                                         data-bs-target="#collapseAccountDetails" aria-expanded="false"
                                                         aria-controls="collapseAccountDetails">
-                                                        Product Info
+                                                        Offer Information
                                                     </button>
                                                 </h2>
                                                 <div id="collapseAccountDetails" class="accordion-collapse collapse"
@@ -210,34 +210,29 @@
 
                 </div>
                 <div class="col-sm-12 offer-card">
-                    <div class="d-none d-lg-block">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="mb-3">
-                                    {% for offer in offers %}
-                                    <!-- Your card content here... -->
-                                    <div class="col-sm-12">
-                                        {% if offer.status == 'ACCEPTED' %}
-                                        <div class="alert alert-success" role="alert">
-                                            Congratulations! Offer accepted. Please check your email for
-                                            instructions.
-                                        </div>
-                                        {% else %}
-                                        <div class="alert alert-warning" role="alert">
-                                            No offer has yet been accepted.
-                                        </div>
-                                        {% endif %}
-                                    </div>
-                                    <!-- More card content... -->
-
-                                    {% empty %}
-                                    <p>No offers yet.</p>
-                                    {% endfor %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="mb-3">
+                                {% if offers|length > 0 %}
+                                {% if is_offer_accepted %}
+                                <div class="alert alert-success" role="alert">
+                                    Congratulations! Offer accepted. Please check your email for instructions.
                                 </div>
+                                {% else %}
+                                <div class="alert alert-warning" role="alert">
+                                    No offer has been accepted yet.
+                                </div>
+                                {% endif %}
+                                {% else %}
+                                <p>No offers yet.</p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
 
             </div>
 

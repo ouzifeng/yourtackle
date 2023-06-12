@@ -24,13 +24,14 @@ from .models import (
     TackleShop,
     Offer,
 )
-from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
 from django.db import transaction
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.http import HttpResponse
 from django.core.mail import mail_admins, send_mail
+from django.contrib.auth.models import User
+
 
 def index(request):
     return render(request, "index.html")
@@ -262,6 +263,7 @@ def view_offers(request, product_id):
     accepted_offer = Offer.objects.filter(
         product=product, status=Offer.OfferStatus.ACCEPTED
     ).first()
+    is_offer_accepted = bool(accepted_offer)
 
     return render(
         request,
@@ -274,8 +276,10 @@ def view_offers(request, product_id):
             "accepted_offer_price": accepted_offer.cash_price
             if accepted_offer
             else None,  # Add the accepted offer price
+            "is_offer_accepted": is_offer_accepted,
         },
     )
+
 
 
 
@@ -387,6 +391,14 @@ def role_required(required_role):
 @role_required("buyer")
 def make_offer(request, product_id):
     product = get_object_or_404(Product, id=product_id)
+    seller_user = User.objects.get(id=product.user_id)  # Get user from user_id in Product model
+    seller_profile = seller_user.profile  # Get user's profile
+    seller = {
+        'first_name': seller_user.first_name,
+        'last_name': seller_user.last_name,
+        'email': seller_user.email,
+        'phone_number': seller_profile.phone_number
+    }
 
     existing_offer = Offer.objects.filter(buyer=request.user, product=product).first()
     if request.method == "POST":
@@ -413,6 +425,7 @@ def make_offer(request, product_id):
             "existing_offer": existing_offer,
             "cash_price": str(existing_offer.cash_price) if existing_offer else None,
             "trade_in_price": str(existing_offer.trade_in_price) if existing_offer else None,
+            "seller": seller,  # Pass the seller data to the template
         },
     )
 

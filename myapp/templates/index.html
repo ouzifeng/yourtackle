@@ -130,6 +130,28 @@
                 </div>
 
             </div>
+            <!-- Call to action-->
+            <section class="py-1">
+                <div class="container px-5 my-5">
+                    <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+                        <div
+                            class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+                            <div class="mb-4 mb-xl-0">
+                                <div class="fs-3 fw-bold text-white">Start selling now</div>
+                                <div class="text-white-50">Zero fees, pick up included. Trusted buyers, 100% hassle free
+                                </div>
+                            </div>
+                            <div class="ms-xl-4">
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-light btn-lg px-4 me-sm-3" href="/form"><b>Sell Your Tackle</b><i
+                                            class="fa-solid fa-arrow-right fa-beat" style="margin-left:40px"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
         </section>
         <!-- Testimonial section-->
         <div class="py-5 bg-light">
@@ -194,7 +216,8 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label for="productDate" style="font-size: 12px"><i>Date Listed:</i></label>
-                                        <div class="card-text mb-0">{{ item.product.created_at|date:"F j, Y" }}</div>
+                                        <div class="card-text mb-0">{{ item.product.created_at|date:"j F Y"|date:"F j,
+                                            Y" }}</div>
                                     </div>
                                     <div class="col-6">
                                         <label for="productCondition" style="font-size: 12px"><i>Condition:</i></label>
@@ -219,21 +242,19 @@
 
 
                 <!-- Call to action-->
+
                 <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
                     <div
                         class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                         <div class="mb-4 mb-xl-0">
-                            <div class="fs-3 fw-bold text-white">Keep up to date with used tackle</div>
-                            <div class="text-white-50">Sign up for our newsletter for the latest updates.</div>
+                            <div class="fs-3 fw-bold text-white">Start selling now</div>
+                            <div class="text-white-50">Zero fees, pick up included. Trusted buyers, 100% hassle free
+                            </div>
                         </div>
                         <div class="ms-xl-4">
-                            <div class="input-group mb-2">
-                                <input class="form-control" type="text" placeholder="Email address..."
-                                    aria-label="Email address..." aria-describedby="button-newsletter" />
-                                <button class="btn btn-outline-light" id="button-newsletter" type="button">Sign
-                                    up</button>
-                            </div>
-                            <div class="small text-white-50">We care about privacy, and will never share your data.
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                <a class="btn btn-light btn-lg px-4 me-sm-3" href="/form"><b>Sell Your Tackle</b><i
+                                        class="fa-solid fa-arrow-right fa-beat" style="margin-left:40px"></i></a>
                             </div>
                         </div>
                     </div>
