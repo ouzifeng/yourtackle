@@ -623,8 +623,8 @@ def contact_view(request):
             send_mail(
                 subject,
                 message,
-                email,
-                ['hello@sellyourtackle.co.uk'],  # This is the destination email
+                'hello@sellyourtackle.co.uk',  # This is the sender
+                ['hello@sellyourtackle.co.uk'],  # This is the recipient
             )
 
             messages.success(request, 'Thanks for your message! We will get back to you as soon as possible.')
