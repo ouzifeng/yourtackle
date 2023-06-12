@@ -13048,3 +13048,8 @@ html {
 .alert {
   text-align: center;
 }
+
+.modal-header {
+  background-color: #2a71f9;
+  color: white;
+}

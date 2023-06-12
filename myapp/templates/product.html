@@ -19,7 +19,7 @@
             <div class="container px-5">
                 <!-- Contact form -->
                 <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
-                    <div class="text-center mb-5">
+                    <div class="text-center mb-3">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
                             <i class="bi bi-hand-thumbs-up"></i>
                         </div>
@@ -30,14 +30,35 @@
 
                         <div class="modal" id="instructionsModal">
                             <div class="modal-dialog">
-                                <div class="modal-content">
+                                <div class="modal-content" style="text-align: left">
                                     <div class="modal-header">
                                         <h5 class="modal-title">Instructions</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Here are the instructions...</p>
+                                        The form requires a few fields to be filled in:<br><br>
+                                        <ul>
+                                            <li><b>Brand:</b> The brand of the product you are selling</li>
+                                            <li><b>Category:</b> Find the most suitable category</li>
+                                            <li><b>Name:</b> The tackle items Name</li>
+                                            <li><b>More Info:</b> Use these fields to add any additional information
+                                                like rod
+                                                length, bait size, bite alarm colour etc. The more descriptive you are
+                                                the better your chances of getting a higher offer</li>
+                                            <li><b>Condition:</b> Choose the relevant dropdown</li>
+                                            <li><b>Description:</b> Any other information you think is necessary</li>
+                                            <li><b>Image:</b> The more the better!</li>
+                                        </ul>
+
+                                        Watch the video below where we upload a Fox Flatline Sleep System<br><br>
+                                        <div
+                                            style="position: relative; padding-bottom: 48.580441640378545%; height: 0;">
+                                            <iframe
+                                                src="https://www.loom.com/embed/53382708cce54c6ba7cc2ce8952e081a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true.  "
+                                                frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+                                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -52,8 +73,9 @@
                         <div class="col-lg-8 col-xl-6">
                             <!-- New Tab -->
                             <div class="tab">
-                                <p class="text-center">The more accurate and more descriptive you are, the more likely
-                                    you will receive a better offer
+                                <p class="text-center">The more <strong>accurate</strong> and more
+                                    <strong>descriptive</strong> you are, the more likely
+                                    you will receive a <strong>higher</strong> offer
                                 </p>
                                 <!-- Start Contact Form -->
                                 {% load crispy_forms_tags %}
