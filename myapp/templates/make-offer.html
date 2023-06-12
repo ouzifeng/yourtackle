@@ -221,7 +221,19 @@
                             whether
                             they want the cash price or the trade-in price
                         </p>
-                        <a href="#" class="btn btn-primary">Contact Seller</a>
+                        <div id="sellerInfo" style="display: none;">
+                            <p>Seller Name: {{ seller.first_name }} {{ seller.last_name }}</p>
+                            <p>Seller Email: {{ seller.email }}</p>
+                            <p>Seller Phone Number: {{ seller.profile.phone_number }}</p>
+                        </div>
+                        <button id="revealButton" class="btn btn-primary">Reveal Seller Information</button>
+
+                        <script>
+                            document.getElementById('revealButton').addEventListener('click', function () {
+                                document.getElementById('sellerInfo').style.display = 'block';
+                            });
+                        </script>
+
                         {% else %}
                         <p class="custom-input existing-offer">Cash offer already made for £{{ existing_offer.cash_price
                             }}
