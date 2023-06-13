@@ -72,7 +72,7 @@ EMAIL_HOST = 'live.smtp.mailtrap.io'
 EMAIL_HOST_USER = 'api'
 EMAIL_HOST_PASSWORD = '0c0f32852901d28b13f9cd86f20a8c15'
 EMAIL_PORT = '25'
-
+FROM_EMAIL = 'hello@sellyourtackle.co.uk'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
