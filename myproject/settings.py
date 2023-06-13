@@ -73,7 +73,7 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'AKIARBHNI2QM7Q7Y4AM5'
 EMAIL_HOST_PASSWORD = 'BAjKDAspLvhjyr0VJijLalSm8wAXju/afhV0ghPZ/rte'
-FROM_EMAIL = 'Sell Your Tackle <hello@sellyourtackle.co.uk>'
+FROM_EMAIL = 'hello@sellyourtackle.co.uk'
 
 
 MEDIA_URL = "/media/"
