@@ -20,13 +20,6 @@ def send_async_email(email_message):
 def send_async_email(email):
     email.send()
 
-@receiver(user_logged_in)
-def send_login_email(sender, request, user, **kwargs):
-    subject = "Sell Your Tackle Login"
-    body = "You have successfully logged in to your Sell Your Tackle account."
-    email = EmailMessage(subject, body, settings.FROM_EMAIL, [user.email])
-    threading.Thread(target=send_async_email, args=(email,)).start()
-
    
 @receiver(post_save, sender=get_user_model())
 def send_registration_email(sender, instance=None, created=False, **kwargs):
