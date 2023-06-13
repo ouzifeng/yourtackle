@@ -72,7 +72,7 @@ EMAIL_HOST='email-smtp.eu-west-2.amazonaws.com'
 EMAIL_PORT='587'
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER='AKIARBHNI2QM7Q7Y4AM5'
-EMAIL_HOST_PASSWORD='BAjKDAspLvhjyr0VJijLalSm8wAXju/afhV0ghPZ/rte'
+EMAIL_HOST_PASSWORD= os.environ.get('EMAIL_HOST_PASSWORD')
 FROM_EMAIL = 'Sell Your Tackle <hello@sellyourtackle.co.uk>'
 
 MEDIA_URL = "/media/"
