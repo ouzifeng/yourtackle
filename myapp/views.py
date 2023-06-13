@@ -623,7 +623,7 @@ def contact_view(request):
             send_mail(
                 subject,
                 message,
-                'hello@sellyourtackle.co.uk',  # This is the sender
+                'Sell Your Tackle <hello@sellyourtackle.co.uk>',  # This is the sender
                 ['hello@sellyourtackle.co.uk'],  # This is the recipient
             )
 
