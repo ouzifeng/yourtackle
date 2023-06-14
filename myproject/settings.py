@@ -135,14 +135,11 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),  
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        }
+        'NAME': 'heroku_46698ba2012ae60',
+        'USER': 'b2397ce5714ac6',
+        'PASSWORD': '93fb198c',
+        'HOST': 'eu-cdbr-west-03.cleardb.net',
+        'PORT': '3306',
     }
 }
 
