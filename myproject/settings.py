@@ -137,8 +137,8 @@ DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': 'neondb',
-    'USER': 'ouzifeng',
-    'PASSWORD': '3yWFlSJ0RhOj',
+    'USER': os.environ.get('DB_USER'),
+    'PASSWORD': os.environ.get('DB_PASSWORD'),
     'HOST': 'ep-shiny-flower-350995.eu-central-1.aws.neon.tech',
     'PORT': '5432',
   }
