@@ -135,12 +135,12 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
-        'NAME': os.getenv('DB_NAME'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'HOST': 'ep-shiny-flower-350995.eu-central-1.aws.neon.tech',
+        'PORT': '5432',
     }
 }
 
