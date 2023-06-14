@@ -5,4 +5,4 @@ Start Envrionment while in your_tackle
 source ./env/Scripts/activate 
 
 Start Heroku Dyno after deploying  
-heruko ps:scale web=1
+heroku ps:scale web=1
