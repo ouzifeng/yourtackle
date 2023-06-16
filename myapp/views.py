@@ -84,6 +84,9 @@ def product(request):
 def tackleshopaccount(request):
     return render(request, "tackle-shop-account.html")
 
+def howitworks(request):
+    return render(request, "how-it-works.html")
+
 
 def custom_logout(request):
     logout(request)

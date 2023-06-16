@@ -22,6 +22,7 @@ urlpatterns = [
     path("login/", LoginView.as_view(template_name="login.html"), name="login"),
     path("logout/", LogoutView.as_view(next_page="index"), name="logout"),
     path("my-account/", views.myaccount, name="myaccount"),
+    path("how-it-works/", views.howitworks, name="howitworks"),
     path("product/", views.product, name="product"),
     path(
         "tackle-shop-register/", views.tackleshopregister, name="tackle-shop-register"
