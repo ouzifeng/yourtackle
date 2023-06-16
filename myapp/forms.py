@@ -138,20 +138,28 @@ class UserRegisterForm(UserCreationForm):
             "password2",
         ]
 
-def save(self, commit=True):
-    user = super(UserCreationForm).save(commit=False)
-    user.username = self.cleaned_data["email"]
-    user.email = self.cleaned_data["email"]
-    user.set_password(self.cleaned_data["password1"])
-    if commit:
-        user.save()
-        profile = Profile(
-            user=user,
-            phone_number=self.cleaned_data["phone_number"],
-            user_type=self.cleaned_data["role"],
-        )  # create profile instance
-        profile.save()
-    return user
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError(u'A user with that email already exists.')
+        return email
+
+    def save(self, commit=True):
+        user = super(UserCreationForm, self).save(commit=False)
+        user.username = self.cleaned_data["email"]
+        user.email = self.cleaned_data["email"]
+        user.set_password(self.cleaned_data["password1"])
+        if commit:
+            user.save()
+            profile = Profile(
+                user=user,
+                phone_number=self.cleaned_data["phone_number"],
+                user_type=self.cleaned_data["role"],
+            )  # create profile instance
+            profile.save()
+        return user
+
 
 
 

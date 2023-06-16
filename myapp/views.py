@@ -179,6 +179,7 @@ def register(request):
     return render(request, "register.html", {"form": form})
 
 
+
 def form_view(request):
     if request.user.is_authenticated:
         return redirect("product")
