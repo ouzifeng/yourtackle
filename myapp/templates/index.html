@@ -266,8 +266,10 @@
                         <div class="card h-100 shadow border-0">
                             <div id="product-card-img-container">
                                 {% for product_image in item.product.images.all %}
-                                <img src="{{ product_image.image.url }}" alt="{{ product.name }} image"
+                                {% if forloop.first %}
+                                <img src="{{ product_image.image.url }}" alt="{{ item.product.name }} image"
                                     class="img-fluid" id="product-card-img">
+                                {% endif %}
                                 {% endfor %}
                             </div>
                             <div class="card-body p-4 card-border">
