@@ -135,12 +135,8 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 
 DATABASES = {
   'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'neondb',
-    'USER': os.environ.get('DB_USER'),
-    'PASSWORD': os.environ.get('DB_PASSWORD'),
-    'HOST': 'ep-shiny-flower-350995.eu-central-1.aws.neon.tech',
-    'PORT': '5432',
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
   }
 }
 
